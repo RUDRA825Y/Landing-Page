@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FLYNETIC — Flashy Finance Landing</title>
+  <style>
+    :root{--accent1:#00ff99;--accent2:#ffd700;--dark:#071024;--card:#0f1720;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#060610 0%, #071024 60%);color:#e6f7f0;display:flex;flex-direction:column;align-items:center}
+    .container{max-width:980px;width:100%;padding:28px}
+    header{background:linear-gradient(135deg,#071024,#0c2540);padding:36px;border-radius:18px;display:flex;gap:22px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,0.6),0 6px 30px rgba(0,255,153,0.05) inset}
+    header img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:6px solid rgba(0,255,153,0.08);box-shadow:0 8px 30px rgba(0,255,153,0.12),0 2px 6px rgba(0,0,0,0.6)}
+    header .meta{flex:1;text-align:left}
+    header h1{margin:0;font-size:36px;letter-spacing:2px;text-transform:uppercase;color:var(--accent1);text-shadow:0 0 16px rgba(0,255,153,0.18), 0 0 40px rgba(255,215,0,0.06)}
+    header p{margin:6px 0 0;font-weight:600;color:#cfeee0;text-shadow:0 0 8px rgba(0,0,0,0.3)}
+    .cta{display:flex;gap:12px;margin-top:14px}
+    .btn{padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,0.55);transition:transform .22s ease,box-shadow .22s ease;display:inline-flex;align-items:center;gap:10px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),#00c2ff);color:#001219}
+    .btn-yt{background:linear-gradient(90deg,#ff4b4b,#ff8a00);color:white}
+    .btn-ig{background:linear-gradient(90deg,#e1306c,#ff7ab6);color:white}
+    .btn:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+    #promo{margin-top:28px;padding:26px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    #countdown{font-weight:900;font-size:36px;color:var(--accent2);text-shadow:0 0 10px rgba(255,215,0,0.3);display:inline-block;padding:6px 12px;border-radius:8px;background:rgba(0,0,0,0.25)}
+    #results{margin-top:26px;padding:28px;border-radius:14px;background:linear-gradient(180deg,#e9fff6 0%, #f6fffaf0 100%);color:#071024;box-shadow:0 20px 50px rgba(2,8,23,0.6)}
+    #results h2{margin:0 0 12px;color:#0a1922;text-shadow:0 0 6px rgba(0,255,153,0.12)}
+    .profit-card{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .profit-card img{max-width:520px;width:100%;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,0.45),0 6px 18px rgba(0,200,120,0.12);border:6px solid rgba(255,255,255,0.6)}
+    .profit-text{flex:1;min-width:200px}
+    .profit-text p{font-size:18px;font-weight:800;margin:0;color:#0a1720;text-shadow:0 0 8px rgba(255,165,0,0.08)}
+    footer{margin:28px 0 60px;color:#9fdcc5;opacity:0.9;font-size:14px}
+    @media(max-width:720px){header{flex-direction:column;align-items:center}header .meta{text-align:center} .profit-card{flex-direction:column} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="\images\logo_avi.jpg" alt="AI logo">
+      <div class="meta">
+        <h1>FLYNETIC</h1>
+        <p>RUDRA YADAV SIGNALS — Premium Winning Signals</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://t.me/flynetic">📲 Join Telegram</a>
+          <a class="btn btn-yt" href="https://youtube.com/@flynetick?si=1hlZKThQaZx-_x8w">▶️ YouTube</a>
+          <a class="btn btn-ig" href="https://www.instagram.com/flynetick">📸 Instagram</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="promo">
+      <h2 style="margin:0;color:var(--accent1);text-shadow:0 0 14px rgba(0,255,153,0.12)">🚀 Promo FLYN8</h2>
+      <p style="margin:10px 0 16px;color:#bfeee0">Join our official channels & unlock premium signals today. Fast alerts • Clear targets • Proven results.</p>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div id="countdown">60</div>
+        <div style="color:#c9fff0;margin-left:8px">Redirecting to Telegram after <strong id="count-text">60</strong> seconds...</div>
+      </div>
+    </section>
+
+    <section id="results">
+      <h2>💰 Recent Profit Results</h2>
+      <div class="profit-card">
+        <img src="\images\cashout_ss.jpg" alt="Profit Screenshot">
+        <div class="profit-text">
+          <p>🔥 Live Proof of Our Winning Signals — Real trades, clear entry/exit, high accuracy.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>Designed for high-converting Meta ads • Works on all devices</footer>
+  </div>
+
+  <script>
+    let timeLeft = 60;
+    const countdownElement = document.getElementById("countdown");
+    const countTextElement = document.getElementById("count-text");
+
+    const timer = setInterval(function() {
+      timeLeft--;
+      countdownElement.textContent = timeLeft;
+      countTextElement.textContent = timeLeft;
+      
+      if (timeLeft <= 10) {
+        countdownElement.style.color = '#ffce00';
+        countdownElement.style.animation = 'blinker 1s linear infinite';
+      }
+      
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "https://t.me/flynetic";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
